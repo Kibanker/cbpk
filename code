@@ -55,6 +55,9 @@ namespace _1st_Program
     {
         static void Main(string[] args)
         {                     
+            ConsoleKeyInfo key;
+            key = Console.ReadKey();
+
 
             Console.Title = "Cyberpunk";
             Console.WriteLine("One day, in a futuristic city named...");
@@ -80,11 +83,13 @@ namespace _1st_Program
             Console.WriteLine("Okay " + Boxer.punch + " it is. Now, let's make you enter " + Boxer.boxerName + "'s body.");
             Console.WriteLine("*Body transfer in progress please wait...* (Press a key)" );
             Console.ReadKey();
+            Console.Clear();
             Console.WriteLine("Cool, you're now in " + Boxer.boxerName + "'s body. You can control his actions and everything he does. Good luck !");
             Console.WriteLine("Press a key to start and create your own story in " + cityName + ".");
             Console.ReadKey();
             Console.WriteLine("--------------\n--------------");
             Console.ReadKey();
+            Console.Clear();
 
             Enemy enemy01 = new Enemy("MOON-657");
             Boxer yourBoxer = new Boxer();
@@ -92,7 +97,7 @@ namespace _1st_Program
             Console.WriteLine("You appeared during a fight. Take over it !");
             enemy01.Shoot();            
             Console.WriteLine("An enemy is attacking ! Quick, press a key to throw " + Boxer.punch +" !");
-            yourBoxer.Punch();                            
+            yourBoxer.Punch();                                                                      
             Console.WriteLine("Let's go, throw another punch boxer !");            
             Console.WriteLine("That was amazing, I'm happy you're the one who took over " + Boxer.boxerName + "'s body...");
             Console.WriteLine("But it's only the beginning ! Two more enemies are attacking, be careful !");
