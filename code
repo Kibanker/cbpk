@@ -55,10 +55,6 @@ namespace _1st_Program
     {
         static void Main(string[] args)
         {                     
-            ConsoleKeyInfo key;
-            key = Console.ReadKey();
-
-
             Console.Title = "Cyberpunk";
             Console.WriteLine("One day, in a futuristic city named...");
             string cityName = Console.ReadLine();
