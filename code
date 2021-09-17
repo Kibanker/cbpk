@@ -1,0 +1,122 @@
+using System;
+using System.Collections.Generic;
+
+namespace _1st_Program
+{
+    class Enemy 
+    {
+        public string name;
+        //public string gun;
+        public static int energy;
+
+        public Enemy(string _name)
+        {
+            name = _name;
+            energy = 4;
+        }
+
+        public void Shoot() 
+        {
+            Console.ReadKey();
+            if (energy > 0) 
+            {
+                Console.WriteLine(name + " is shooting ! You're losing health !");
+                Boxer.health -= 1;
+                Console.WriteLine("You have " + Boxer.health + " health points.");
+            } else 
+            {
+                Console.WriteLine("Enemy is dead !");
+            }
+        }
+
+    }
+
+    class Boxer 
+    {
+        public static string boxerName;
+        public static string punch;
+        public static int health;
+
+
+        public Boxer()
+        {                        
+            health = 10;
+        }
+
+        public void Punch() 
+        {
+                Console.WriteLine("Awesome ! You threw " + Boxer.punch + " and the enemy is hit.");
+                Enemy.energy -= 2;        
+        }
+    
+    
+    class Program
+    {
+        static void Main(string[] args)
+        {                     
+
+            Console.Title = "Cyberpunk";
+            Console.WriteLine("One day, in a futuristic city named...");
+            string cityName = Console.ReadLine();
+            Console.WriteLine("A famous cyber-boxer had to find an electronic chip, that could help him save his soul, once he dies.");
+            Console.WriteLine("That boxer had a nickname, which was known in the whole city, it was...");
+            Boxer.boxerName = Console.ReadLine();
+            Console.WriteLine("Anyone who had a criminal activity, feared this nickname, because once you knew you had to face him, you knew you would die.");
+            Console.WriteLine("Yeah, but he also had enemies, and this girl named...");
+            string enemyGirl = Console.ReadLine();
+            Console.WriteLine("Was known all around the city too, she wanted to kill that boxer, and tried a handful of times, failing.");
+            Console.WriteLine("The thing is, she never understood why he never tried to eliminate her, after all, she was an insect among others for him, or so she thought.");
+            Console.WriteLine("Do you have any idea as to why he never killed her ?");
+            Console.ReadLine();
+            Console.WriteLine("Hmm, I see...but the fact is that...");
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.WriteLine("His main mission, given by his unknown boss a long time ago, was to protect " + enemyGirl + ".");
+            Console.ReadKey();
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Now, you will do one with " + Boxer.boxerName +", and will control his mind and his actions. You will have to fight and kill his enemies, and of course fight and kill " + enemyGirl + "'s enemies. Let's get started...");
+            Console.WriteLine("First of all, give a name to your punch: ");
+            Boxer.punch = Console.ReadLine();
+            Console.WriteLine("Okay " + Boxer.punch + " it is. Now, let's make you enter " + Boxer.boxerName + "'s body.");
+            Console.WriteLine("*Body transfer in progress please wait...* (Press a key)" );
+            Console.ReadKey();
+            Console.WriteLine("Cool, you're now in " + Boxer.boxerName + "'s body. You can control his actions and everything he does. Good luck !");
+            Console.WriteLine("Press a key to start and create your own story in " + cityName + ".");
+            Console.ReadKey();
+            Console.WriteLine("--------------\n--------------");
+            Console.ReadKey();
+
+            Enemy enemy01 = new Enemy("MOON-657");
+            Boxer yourBoxer = new Boxer();
+
+            Console.WriteLine("You appeared during a fight. Take over it !");
+            enemy01.Shoot();            
+            Console.WriteLine("An enemy is attacking ! Quick, press a key to throw " + Boxer.punch +" !");
+            yourBoxer.Punch();                            
+            Console.WriteLine("Let's go, throw another punch boxer !");            
+            Console.WriteLine("That was amazing, I'm happy you're the one who took over " + Boxer.boxerName + "'s body...");
+            Console.WriteLine("But it's only the beginning ! Two more enemies are attacking, be careful !");
+
+            Enemy enemy02 = new Enemy("SUN-197");
+            Enemy enemy03 = new Enemy("SKY-130"); 
+
+            enemy02.Shoot();
+            enemy03.Shoot();
+
+            Console.WriteLine("Hmm, they aren't that good, they are slow...But you're not, that's your turn now, throw some punches !");
+            yourBoxer.Punch();             
+            Console.WriteLine("Again !");
+            yourBoxer.Punch();
+            Console.WriteLine("Don't stop boxer !");
+            yourBoxer.Punch();
+            Console.WriteLine("A last one...");
+            yourBoxer.Punch();
+            Console.WriteLine("Uff ! You aced that fight, and you also looted some objects. Let's see...");
+            
+
+
+            // wait before closing
+            Console.ReadKey();
+        }
+    }
+    }
+}
