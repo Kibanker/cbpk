@@ -12,6 +12,7 @@ namespace _1st_Program
         public Enemy(string _name)
         {
             name = _name;
+            //gun = _gun;
             energy = 4;
         }
 
@@ -48,7 +49,7 @@ namespace _1st_Program
                 Console.WriteLine("Awesome ! You threw " + Boxer.punch + " and the enemy is hit.");
                 Enemy.energy -= 2;        
         }
-    
+    }
     
     class Program
     {
@@ -117,6 +118,5 @@ namespace _1st_Program
             // wait before closing
             Console.ReadKey();
         }
-    }
     }
 }
